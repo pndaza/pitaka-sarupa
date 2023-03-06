@@ -1,0 +1,63 @@
+name: pitaka_sarupa
+description: A new Flutter project.
+publish_to: 'none' 
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.19.2 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  
+  cupertino_icons: ^1.0.2
+  sqflite: ^2.2.5
+  sqflite_common_ffi: ^2.2.1+1
+  path: ^1.8.2
+  path_provider: ^2.0.13
+  provider: ^6.0.5
+  shared_preferences: ^2.0.18
+  substring_highlight: ^1.0.33
+  super_sliver_list: ^0.0.7
+  flex_color_scheme: 7.0.0-dev.2
+  material_segmented_control: ^4.2.0
+  favorite_button: ^0.0.4
+  like_button: ^2.0.5
+  flutter_slidable: ^2.0.0
+  community_material_icon: ^5.9.55
+  flutter_widget_from_html_core: ^0.10.0
+  # like_button: ^2.0.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  icons_launcher: ^2.1.0
+
+icons_launcher:
+  image_path: "assets/icons/pitaka_sarupa.png"
+  platforms:
+    android:
+      enable: true
+    ios:
+      enable: true
+    macos:
+      enable: true
+    windows:
+      enable: true
+    linux:
+      enable: true
+
+flutter:  
+  uses-material-design: true
+
+  assets:
+    - assets/database/pitaka_sarupa.db
+    - assets/info.html
+
+  fonts:
+    - family: Pyidaungsu
+      fonts:
+        - asset: assets/fonts/Pyidaungsu-Regular.ttf
+        - asset: assets/fonts/Pyidaungsu-Bold.ttf
