@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:pitaka_sarupa/models/topic.dart';
-import 'package:pitaka_sarupa/screens/detail_screen/detail_screen.dart';
+import '../../../models/topic.dart';
+import '../../detail_screen/detail_screen.dart';
 import '../../../models/recent.dart';
 import 'recent_list_tile.dart';
 import 'recent_page_view_manager.dart';

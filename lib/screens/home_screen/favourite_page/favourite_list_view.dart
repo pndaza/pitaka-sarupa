@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import '../../../models/favourite.dart';
-import 'favourite_list_tile.dart';
-import 'favourite_page_view_manager.dart';
 import 'package:provider/provider.dart';
 
+import '../../../models/favourite.dart';
 import '../../../widgets/multi_value_listenable_builder.dart';
+import 'favourite_list_tile.dart';
+import 'favourite_page_view_manager.dart';
 
 class FavouritelistView extends StatelessWidget {
   const FavouritelistView({

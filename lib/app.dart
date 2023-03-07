@@ -1,9 +1,10 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
-import 'data/constants.dart';
-import 'controllers/theme_controller.dart';
-import 'screens/home_screen.dart';
 import 'package:provider/provider.dart';
+
+import 'controllers/theme_controller.dart';
+import 'data/constants.dart';
+import 'screens/home_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key, required this.themeController});

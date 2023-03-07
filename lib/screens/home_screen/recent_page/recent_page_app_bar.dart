@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'recent_page_view_manager.dart';
 import 'package:provider/provider.dart';
 
 import '../../../utils/mm_number.dart';
 import '../../../widgets/multi_value_listenable_builder.dart';
+import 'recent_page_view_manager.dart';
 
 class RecentPageAppBar extends StatelessWidget
     implements PreferredSizeWidget {

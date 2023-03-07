@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'home_screen/favourite_page/favourite_page.dart';
-import 'home_screen/topics_page/topics_page.dart';
 import 'home_screen/recent_page/recent_page.dart';
 import 'home_screen/setting_page/setting_page.dart';
+import 'home_screen/topics_page/topics_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

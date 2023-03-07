@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pitaka_sarupa/repositories/recent_repository.dart';
+import '../../../repositories/recent_repository.dart';
 import 'package:provider/provider.dart';
 import 'package:super_sliver_list/super_sliver_list.dart';
 

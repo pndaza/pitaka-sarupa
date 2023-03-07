@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
-import 'package:pitaka_sarupa/models/recent.dart';
-import 'package:pitaka_sarupa/repositories/recent_repository.dart';
+import '../../../models/recent.dart';
+import '../../../repositories/recent_repository.dart';
 
 import '../../../enums/state_status.dart';
 import '../../../models/topic.dart';

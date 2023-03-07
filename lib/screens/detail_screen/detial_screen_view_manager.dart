@@ -1,10 +1,10 @@
 import 'package:flutter/foundation.dart';
-import '../../models/favourite.dart';
-import '../../repositories/favourite_repository.dart';
 
 import '../../enums/state_status.dart';
 import '../../models/detail.dart';
+import '../../models/favourite.dart';
 import '../../models/topic.dart';
+import '../../repositories/favourite_repository.dart';
 import '../../repositories/topic_repository.dart';
 
 class DetailScreenViewManager {

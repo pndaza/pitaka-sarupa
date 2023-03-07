@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import '../../../clients/database_client.dart';
+import '../../../enums/state_status.dart';
 import '../../../repositories/favourite_repository.dart';
+import '../../../widgets/loading_view.dart';
 import 'favourite_list_view.dart';
 import 'favourite_page_app_bar.dart';
 import 'favourite_page_view_manager.dart';
-import 'package:provider/provider.dart';
-
-import '../../../enums/state_status.dart';
-import '../../../widgets/loading_view.dart';
 
 class FavouritePage extends StatelessWidget {
   const FavouritePage({super.key});

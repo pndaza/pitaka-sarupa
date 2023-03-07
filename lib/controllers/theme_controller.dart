@@ -1,8 +1,8 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
-import '../services/theme_service.dart';
 
 import '../data/theme_datas.dart';
+import '../services/theme_service.dart';
 
 class ThemeController extends ChangeNotifier {
   ThemeController(this.themeService);

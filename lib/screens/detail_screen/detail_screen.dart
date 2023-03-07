@@ -2,13 +2,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:like_button/like_button.dart';
-import 'package:pitaka_sarupa/repositories/favourite_repository.dart';
 import 'package:provider/provider.dart';
 
 import '../../clients/database_client.dart';
 import '../../enums/state_status.dart';
 import '../../models/detail.dart';
 import '../../models/topic.dart';
+import '../../repositories/favourite_repository.dart';
 import '../../repositories/topic_repository.dart';
 import 'detial_screen_view_manager.dart';
 
