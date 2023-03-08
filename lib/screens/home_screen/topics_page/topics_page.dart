@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pitaka_sarupa/utils/platform_util.dart';
 import '../../../repositories/recent_repository.dart';
 import 'package:provider/provider.dart';
 import 'package:super_sliver_list/super_sliver_list.dart';
@@ -71,22 +72,27 @@ class _TopicPageView extends StatelessWidget {
                     builder: (_, topics, __) {
                       return ScrollConfiguration(
                         behavior: ScrollConfiguration.of(context)
-                            .copyWith(scrollbars: true),
-                        child: CustomScrollView(
-                          slivers: [
-                            SuperSliverList(
-                                delegate: SliverChildBuilderDelegate(
-                                    childCount: topics.length,
-                                    (context, index) => TopicListTile(
-                                          enumText: topics[index].name,
-                                          highlightText:
-                                              viewManager.filteredText,
-                                          onTap: () => _onClickedTopic(
-                                            context,
-                                            topics[index],
-                                          ),
-                                        )))
-                          ],
+                            .copyWith(scrollbars: false),
+                        child: Scrollbar(
+                          thickness: 8.0,
+                          radius: const Radius.circular(4.0),
+                          child: CustomScrollView(
+                            primary: true,
+                            slivers: [
+                              SuperSliverList(
+                                  delegate: SliverChildBuilderDelegate(
+                                      childCount: topics.length,
+                                      (context, index) => TopicListTile(
+                                            enumText: topics[index].name,
+                                            highlightText:
+                                                viewManager.filteredText,
+                                            onTap: () => _onClickedTopic(
+                                              context,
+                                              topics[index],
+                                            ),
+                                          )))
+                            ],
+                          ),
                         ),
                       );
                     });
