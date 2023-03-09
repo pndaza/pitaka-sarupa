@@ -49,7 +49,7 @@ class DatabaseClient {
     }
 
     final recents = <Map<String, Object?>>[];
-    final bookmarks = <Map<String, Object?>>[];
+    final favourites = <Map<String, Object?>>[];
 
     if ((exists &&
             PrefClient.isInitialized &&
@@ -64,8 +64,8 @@ class DatabaseClient {
       final oldDatabase = await openDatabase(dbFilePath);
       recents
           .addAll(await backup(oldDatabase: oldDatabase, tableName: 'recent'));
-      bookmarks.addAll(
-          await backup(oldDatabase: oldDatabase, tableName: 'bookmark'));
+      favourites.addAll(
+          await backup(oldDatabase: oldDatabase, tableName: 'favourite'));
 
       // deleting old database
       await deleteDatabase(dbFilePath);
@@ -80,9 +80,9 @@ class DatabaseClient {
             newDatabase: newDatabase, tableName: 'recent', values: recents);
       }
 
-      if (bookmarks.isNotEmpty) {
+      if (favourites.isNotEmpty) {
         await restore(
-            newDatabase: newDatabase, tableName: 'bookmark', values: bookmarks);
+            newDatabase: newDatabase, tableName: 'favourite', values: favourites);
       }
 
       return newDatabase;
