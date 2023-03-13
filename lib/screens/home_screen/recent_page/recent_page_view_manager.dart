@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../dialogs/confirm_dialog.dart';
 import '../../../enums/state_status.dart';
 import '../../../models/recent.dart';
-import '../../../models/topic.dart';
 import '../../../repositories/recent_repository.dart';
-import '../../detail_screen/detail_screen.dart';
 
 class RecentPageViewManager {
   final RecentRepository recentRepository;

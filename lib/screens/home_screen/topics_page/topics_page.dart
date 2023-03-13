@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:pitaka_sarupa/utils/platform_util.dart';
-import '../../../repositories/recent_repository.dart';
 import 'package:provider/provider.dart';
 import 'package:super_sliver_list/super_sliver_list.dart';
 
 import '../../../clients/database_client.dart';
 import '../../../enums/state_status.dart';
 import '../../../models/topic.dart';
+import '../../../repositories/recent_repository.dart';
 import '../../../repositories/topic_repository.dart';
 import '../../about_screen/about_screen.dart';
 import '../../detail_screen/detail_screen.dart';
