@@ -27,23 +27,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final body = PageView.builder(
-        physics: const NeverScrollableScrollPhysics(),
-        controller: pageController,
-        itemCount: navigationCount,
-        itemBuilder: (_, index) {
-          switch (index) {
-            case 1:
-              return const RecentPage();
-            case 2:
-              return const FavouritePage();
-            case 3:
-              return const SettingPage();
-            default:
-              return const TopicsPage();
-          }
-        });
-
     if (isDesktop) {
       return Scaffold(
         body: ValueListenableBuilder(
@@ -83,7 +66,30 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                   const VerticalDivider(width: 1),
-                  Expanded(child: body),
+                  Expanded(
+                    child: AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 300),
+                      switchInCurve: Curves.easeIn,
+                      switchOutCurve: Curves.easeOut,
+                      transitionBuilder: (child, animation) {
+                        final slide = Tween<Offset>(
+                          begin: const Offset(0, 0.03),
+                          end: Offset.zero,
+                        ).animate(animation);
+                        return FadeTransition(
+                          opacity: animation,
+                          child: SlideTransition(
+                            position: slide,
+                            child: child,
+                          ),
+                        );
+                      },
+                      child: KeyedSubtree(
+                        key: ValueKey<int>(currentPage),
+                        child: _pageWidget(currentPage),
+                      ),
+                    ),
+                  ),
                 ],
               );
             }),
@@ -91,7 +97,11 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     return Scaffold(
-      body: body,
+      body: PageView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          controller: pageController,
+          itemCount: navigationCount,
+          itemBuilder: (_, index) => _pageWidget(index)),
       bottomNavigationBar: ValueListenableBuilder(
           valueListenable: currentPageNotifier,
           builder: (context, currentPage, _) {
@@ -130,23 +140,34 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  void _onNavigationChanged(int value) {
-    if (currentPageNotifier.value == value) return;
-
-    if (isAdjacent(currentPageNotifier.value, value)) {
-      pageController.animateToPage(
-        value,
-        duration: const Duration(milliseconds: 300),
-        curve: Curves.easeIn,
-      );
-    } else {
-      pageController.jumpToPage(value);
+  Widget _pageWidget(int index) {
+    switch (index) {
+      case 1:
+        return const RecentPage();
+      case 2:
+        return const FavouritePage();
+      case 3:
+        return const SettingPage();
+      default:
+        return const TopicsPage();
     }
-    currentPageNotifier.value = value;
   }
 
-  bool isAdjacent(int currentPage, int newPage) {
-    if (newPage == currentPage + 1 || newPage == currentPage - 1) return true;
-    return false;
+  void _onNavigationChanged(int value) {
+    final previous = currentPageNotifier.value;
+    if (previous == value) return;
+    currentPageNotifier.value = value;
+
+    if (!isDesktop) {
+      if ((value - previous).abs() == 1) {
+        pageController.animateToPage(
+          value,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeIn,
+        );
+      } else {
+        pageController.jumpToPage(value);
+      }
+    }
   }
 }
