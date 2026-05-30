@@ -661,14 +661,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.4.1"
-  substring_highlight:
-    dependency: "direct main"
-    description:
-      name: substring_highlight
-      sha256: "96c61e8316098831f6bee87d2386617e4be6aaf87fbc89402dc049d371b67efb"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.33"
   super_sliver_list:
     dependency: "direct main"
     description:
@@ -701,6 +693,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.11"
+  textf:
+    dependency: "direct main"
+    description:
+      name: textf
+      sha256: e05807e5d5ec8ac0c72c99de3d132cae71e95540e2c3ad6287d0582b7b8b15d8
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.2.4"
   typed_data:
     dependency: transitive
     description:

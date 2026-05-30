@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:substring_highlight/substring_highlight.dart';
+import 'package:textf/textf.dart';
 
 class TopicListTile extends StatelessWidget {
   const TopicListTile(
@@ -8,19 +8,27 @@ class TopicListTile extends StatelessWidget {
   final String? highlightText;
   final VoidCallback? onTap;
 
+  String _highlightedText() {
+    final term = highlightText;
+    if (term == null || term.isEmpty) return enumText;
+    final escaped = term.replaceAll('=', '\\=');
+    return enumText.replaceAll(term, '==$escaped==');
+  }
+
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
     return Card(
       elevation: 2.0,
       child: ListTile(
-        title: SubstringHighlight(
-          text: enumText,
-          textStyle:
-              TextStyle(color: Theme.of(context).colorScheme.onSurface),
-          term: highlightText,
-          textStyleHighlight: TextStyle(
+        title: TextfOptions(
+          highlightStyle: TextStyle(
             fontWeight: FontWeight.bold,
-            color: Theme.of(context).colorScheme.primary,
+            color: colorScheme.primary,
+          ),
+          child: Textf(
+            _highlightedText(),
+            style: TextStyle(color: colorScheme.onSurface),
           ),
         ),
         onTap: onTap,
