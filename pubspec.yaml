@@ -26,6 +26,7 @@ dependencies:
   flutter_slidable: ^4.0.3
   community_material_icon: ^5.9.55
   flutter_widget_from_html_core: ^0.17.2
+  window_manager: ^0.4.0
 
 dev_dependencies:
   flutter_test:
