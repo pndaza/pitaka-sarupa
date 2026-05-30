@@ -40,10 +40,18 @@ class _HomeScreenState extends State<HomeScreen> {
                     labelType: NavigationRailLabelType.all,
                     leading: Padding(
                       padding: const EdgeInsets.symmetric(vertical: 16),
-                      child: Icon(
-                        Icons.menu_book,
-                        size: 32,
-                        color: Theme.of(context).colorScheme.primary,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Image.asset(
+                          'assets/icons/pitaka_sarupa.png',
+                          width: 48,
+                          height: 48,
+                          errorBuilder: (_, _, _) => Icon(
+                            Icons.menu_book,
+                            size: 32,
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                        ),
                       ),
                     ),
                     destinations: const [
@@ -72,16 +80,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       switchInCurve: Curves.easeIn,
                       switchOutCurve: Curves.easeOut,
                       transitionBuilder: (child, animation) {
-                        final slide = Tween<Offset>(
-                          begin: const Offset(0, 0.03),
-                          end: Offset.zero,
-                        ).animate(animation);
                         return FadeTransition(
                           opacity: animation,
-                          child: SlideTransition(
-                            position: slide,
-                            child: child,
-                          ),
+                          child: child,
                         );
                       },
                       child: KeyedSubtree(

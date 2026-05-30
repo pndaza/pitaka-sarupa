@@ -54,6 +54,7 @@ flutter:
   assets:
     - assets/database/pitaka_sarupa.db
     - assets/info.html
+    - assets/icons/
 
   fonts:
     - family: Pyidaungsu
