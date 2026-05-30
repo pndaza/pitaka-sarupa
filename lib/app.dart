@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider.value(
       value: themeController,
-      child: Consumer<ThemeController>(builder: (context, themeController, __) {
+      child: Consumer<ThemeController>(builder: (context, themeController, _) {
         var fontSize = themeController.fontSize;
         var textScaleFactor = fontSize / 16;
         return MaterialApp(
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
             final MediaQueryData data = MediaQuery.of(context);
             return MediaQuery(
               data: data.copyWith(
-                textScaleFactor: textScaleFactor,
+                textScaler: TextScaler.linear(textScaleFactor),
               ),
               child: child!,
             );

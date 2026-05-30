@@ -49,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
           }),
       bottomNavigationBar: ValueListenableBuilder(
           valueListenable: currentPageNotifier,
-          builder: (context, currentPage, __) {
+          builder: (context, currentPage, _) {
             return BottomNavigationBar(
               onTap: _onNavigationChanged,
               type: BottomNavigationBarType.fixed,

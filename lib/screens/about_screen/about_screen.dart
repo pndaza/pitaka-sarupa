@@ -24,7 +24,7 @@ class _AboutScreenState extends State<AboutScreen> {
       appBar: AppBar(
         title: const Text(
           'သိမှတ်ဖွယ်',
-          textScaleFactor: 1.0,
+          textScaler: TextScaler.linear(1.0),
         ),
       ),
       body: FutureBuilder(
@@ -51,18 +51,4 @@ class _AboutScreenState extends State<AboutScreen> {
   }
 }
 
-class CustomFactory extends WidgetFactory {
-  @override
-  Widget? buildText(BuildMetadata meta, TextStyleHtml tsh, InlineSpan text) {
-    if (meta.overflow == TextOverflow.clip && text is TextSpan) {
-      return Text.rich(
-        text,
-        style: tsh.style,
-        maxLines: meta.maxLines > 0 ? meta.maxLines : null,
-        textAlign: tsh.textAlign ?? TextAlign.start,
-        textDirection: tsh.textDirection,
-      );
-    }
-    return super.buildText(meta, tsh, text);
-  }
-}
+

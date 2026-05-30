@@ -24,7 +24,7 @@ class DatabaseClient {
   }
 
 // Open Assets Database
-  _initDatabase() async {
+  Future<Database> _initDatabase() async {
     // print('initializing Database');
     late String databasesDirPath;
 

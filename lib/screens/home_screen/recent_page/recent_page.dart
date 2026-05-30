@@ -19,13 +19,13 @@ class RecentPage extends StatelessWidget {
               RecentRepositoryDatabase(DatabaseClient()),
             )..load(),
         dispose: (context, value) => value.dispose(),
-        builder: (context, __) {
+        builder: (context, _) {
           final viewManager = context.read<RecentPageViewManager>();
           return Scaffold(
             appBar: const RecentPageAppBar(),
             body: ValueListenableBuilder<StateStaus>(
                 valueListenable: viewManager.state,
-                builder: (_, state, __) {
+                builder: (_, state, _) {
                   if (state == StateStaus.loading) {
                     return const LoadingView();
                   }

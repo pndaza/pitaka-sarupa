@@ -11,9 +11,9 @@ import '../../../widgets/multi_value_listenable_builder.dart';
 
 class RecentlistView extends StatelessWidget {
   const RecentlistView({
-    Key? key,
+    super.key,
     required this.recents,
-  }) : super(key: key);
+  });
 
   final List<Recent> recents;
 
@@ -24,7 +24,7 @@ class RecentlistView extends StatelessWidget {
     return ValueListenableBuilder2<bool, List<int>>(
         first: viewManager.isSelectionMode,
         second: viewManager.selectedItems,
-        builder: (_, isSelectionMode, selectedItems, __) {
+        builder: (_, isSelectionMode, selectedItems, _) {
           return SlidableAutoCloseBehavior(
             child: ListView.builder(
               itemCount: recents.length,

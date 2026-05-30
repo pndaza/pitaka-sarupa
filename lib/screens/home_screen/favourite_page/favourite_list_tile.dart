@@ -6,14 +6,13 @@ import '../../../models/favourite.dart';
 
 class FavouriteListTile extends StatelessWidget {
   const FavouriteListTile(
-      {Key? key,
+      {super.key,
       required this.favourite,
       this.isSelected = false,
       this.isSelectingMode = false,
       this.onTap,
       this.onLongPress,
-      this.onDelete})
-      : super(key: key);
+      this.onDelete});
   final Favourite favourite;
   final bool isSelected;
   final bool isSelectingMode;

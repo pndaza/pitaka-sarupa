@@ -20,7 +20,7 @@ class TopicsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('သရုပ်စုံအဘိဓာန်', textScaleFactor: 1.0),
+        title: const Text('သရုပ်စုံအဘိဓာန်', textScaler: TextScaler.linear(1.0)),
         actions: [
           IconButton(
               onPressed: () {
@@ -57,7 +57,7 @@ class _TopicPageView extends StatelessWidget {
         Expanded(
           child: ValueListenableBuilder<StateStaus>(
               valueListenable: viewManager.stateStatus,
-              builder: (_, stateStatus, __) {
+              builder: (_, stateStatus, _) {
                 if (stateStatus == StateStaus.loading) {
                   return const Center(
                       child: CircularProgressIndicator.adaptive());
@@ -68,7 +68,7 @@ class _TopicPageView extends StatelessWidget {
 
                 return ValueListenableBuilder(
                     valueListenable: viewManager.filteredTopics,
-                    builder: (_, topics, __) {
+                    builder: (_, topics, _) {
                       return ScrollConfiguration(
                         behavior: ScrollConfiguration.of(context)
                             .copyWith(scrollbars: false),

@@ -8,18 +8,18 @@ import '../../../widgets/multi_value_listenable_builder.dart';
 class FavouritePageAppBar extends StatelessWidget
     implements PreferredSizeWidget {
   const FavouritePageAppBar({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   @override
   Widget build(BuildContext context) {
     final viewManager = context.read<FavouritePageViewManager>();
     return ValueListenableBuilder2<bool, List<int>>(
         first: viewManager.isSelectionMode,
         second: viewManager.selectedItems,
-        builder: (_, isSelectionMode, selectedItems, __) {
+        builder: (_, isSelectionMode, selectedItems, _) {
           if (!isSelectionMode || viewManager.selectedItems.value.isEmpty) {
             return AppBar(
-              title: const Text('မှတ်သားထားသည်များ', textScaleFactor: 1.0),
+              title: const Text('မှတ်သားထားသည်များ', textScaler: TextScaler.linear(1.0)),
               centerTitle: true,
             );
           } else {

@@ -17,7 +17,7 @@ class SettingPage extends StatelessWidget {
     final ThemeData theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('အပြင်အဆင်', textScaleFactor: 1.0),
+        title: const Text('အပြင်အဆင်', textScaler: TextScaler.linear(1.0)),
       ),
       body: Column(
         children: [

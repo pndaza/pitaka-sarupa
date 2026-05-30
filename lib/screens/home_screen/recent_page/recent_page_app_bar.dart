@@ -8,18 +8,18 @@ import 'recent_page_view_manager.dart';
 class RecentPageAppBar extends StatelessWidget
     implements PreferredSizeWidget {
   const RecentPageAppBar({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   @override
   Widget build(BuildContext context) {
     final viewManager = context.read<RecentPageViewManager>();
     return ValueListenableBuilder2<bool, List<int>>(
         first: viewManager.isSelectionMode,
         second: viewManager.selectedItems,
-        builder: (_, isSelectionMode, selectedItems, __) {
+        builder: (_, isSelectionMode, selectedItems, _) {
           if (!isSelectionMode || viewManager.selectedItems.value.isEmpty) {
             return AppBar(
-              title: const Text('ကြည့်ရှုခဲ့သည်များ', textScaleFactor: 1.0),
+              title: const Text('ကြည့်ရှုခဲ့သည်များ', textScaler: TextScaler.linear(1.0)),
               centerTitle: true,
             );
           } else {

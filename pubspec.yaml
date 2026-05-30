@@ -4,36 +4,34 @@ publish_to: 'none'
 version: 1.0.1+2
 
 environment:
-  sdk: '>=2.19.2 <3.0.0'
+  sdk: '>=3.9.0 <4.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  
-  
-  cupertino_icons: ^1.0.2
-  sqflite: ^2.2.5
-  sqflite_common_ffi: ^2.2.1+1
-  path: ^1.8.2
-  path_provider: ^2.0.13
-  provider: ^6.0.5
-  shared_preferences: ^2.0.18
+
+  cupertino_icons: ^1.0.9
+  sqflite: ^2.4.2+1
+  sqflite_common_ffi: ^2.4.0+3
+  path: ^1.9.1
+  path_provider: ^2.1.5
+  provider: ^6.1.5+1
+  shared_preferences: ^2.5.5
   substring_highlight: ^1.0.33
-  super_sliver_list: ^0.0.7
-  flex_color_scheme: 7.0.0-dev.2
-  material_segmented_control: ^4.2.0
+  super_sliver_list: ^0.4.1
+  flex_color_scheme: ^8.4.0
+  material_segmented_control: ^5.0.1
   favorite_button: ^0.0.4
-  like_button: ^2.0.5
-  flutter_slidable: ^2.0.0
+  like_button: ^2.1.0
+  flutter_slidable: ^4.0.3
   community_material_icon: ^5.9.55
-  flutter_widget_from_html_core: ^0.10.0
-  # like_button: ^2.0.5
+  flutter_widget_from_html_core: ^0.17.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
-  icons_launcher: ^2.1.0
+  flutter_lints: ^6.0.0
+  icons_launcher: ^3.1.0
 
 icons_launcher:
   image_path: "assets/icons/pitaka_sarupa.png"

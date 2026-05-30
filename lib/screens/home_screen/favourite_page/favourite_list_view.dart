@@ -9,9 +9,9 @@ import 'favourite_page_view_manager.dart';
 
 class FavouritelistView extends StatelessWidget {
   const FavouritelistView({
-    Key? key,
+    super.key,
     required this.favourites,
-  }) : super(key: key);
+  });
 
   final List<Favourite> favourites;
 
@@ -22,7 +22,7 @@ class FavouritelistView extends StatelessWidget {
     return ValueListenableBuilder2<bool, List<int>>(
         first: viewManager.isSelectionMode,
         second: viewManager.selectedItems,
-        builder: (_, isSelectionMode, selectedItems, __) {
+        builder: (_, isSelectionMode, selectedItems, _) {
           return SlidableAutoCloseBehavior(
             child: ListView.builder(
               itemCount: favourites.length,

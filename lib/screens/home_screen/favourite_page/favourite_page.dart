@@ -19,13 +19,13 @@ class FavouritePage extends StatelessWidget {
               FavouriteRepositoryDatabase(DatabaseClient()),
             )..load(),
         dispose: (context, value) => value.dispose(),
-        builder: (context, __) {
+        builder: (context, _) {
           final viewManager = context.read<FavouritePageViewManager>();
           return Scaffold(
             appBar: const FavouritePageAppBar(),
             body: ValueListenableBuilder<StateStaus>(
                 valueListenable: viewManager.state,
-                builder: (_, state, __) {
+                builder: (_, state, _) {
                   if (state == StateStaus.loading) {
                     return const LoadingView();
                   }

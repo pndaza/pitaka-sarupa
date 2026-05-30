@@ -54,7 +54,7 @@ class _SearchFieldState extends State<SearchField> {
   }
 
   Widget? suffix() {
-    return ValueListenableBuilder(valueListenable: controller, builder: (_,text,__){
+    return ValueListenableBuilder(valueListenable: controller, builder: (_,text,_){
           if (controller.text.isEmpty) {
       return const SizedBox.shrink();
     }

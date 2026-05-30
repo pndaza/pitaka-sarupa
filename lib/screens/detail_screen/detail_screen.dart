@@ -29,7 +29,7 @@ class DetailScreen extends StatelessWidget {
           return Scaffold(
             appBar: AppBar(
               elevation: 0.3,
-              title: const Text('သရုပ်အဖွင့်', textScaleFactor: 1.0),
+              title: const Text('သရုပ်အဖွင့်', textScaler: TextScaler.linear(1.0)),
               actions: [
                 IconButton(
                     onPressed: () async {
@@ -201,13 +201,13 @@ class _OrderedListItem extends StatelessWidget {
             width: 56.0,
             child: Text(
               texts[0],
-              textScaleFactor: MediaQuery.of(context).textScaleFactor + 0.1,
+              textScaler: TextScaler.linear(MediaQuery.of(context).textScaler.scale(1) + 0.1),
             )),
         Expanded(
             child: Text(
           texts[1],
           style: const TextStyle(height: 1.8),
-          textScaleFactor: MediaQuery.of(context).textScaleFactor + 0.1,
+          textScaler: TextScaler.linear(MediaQuery.of(context).textScaler.scale(1) + 0.1),
         )),
       ],
     );

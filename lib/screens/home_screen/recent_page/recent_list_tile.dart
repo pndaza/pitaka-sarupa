@@ -6,14 +6,13 @@ import '../../../models/recent.dart';
 
 class RecentListTile extends StatelessWidget {
   const RecentListTile(
-      {Key? key,
+      {super.key,
       required this.recent,
       this.isSelected = false,
       this.isSelectingMode = false,
       this.onTap,
       this.onLongPress,
-      this.onDelete})
-      : super(key: key);
+      this.onDelete});
   final Recent recent;
   final bool isSelected;
   final bool isSelectingMode;

@@ -16,7 +16,7 @@ class TopicListTile extends StatelessWidget {
         title: SubstringHighlight(
           text: enumText,
           textStyle:
-              TextStyle(color: Theme.of(context).colorScheme.onBackground),
+              TextStyle(color: Theme.of(context).colorScheme.onSurface),
           term: highlightText,
           textStyleHighlight: TextStyle(
             fontWeight: FontWeight.bold,

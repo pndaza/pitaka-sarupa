@@ -9,12 +9,11 @@ class ConfirmDialog extends StatelessWidget {
   final String okLabel;
 
   const ConfirmDialog(
-      {Key? key,
+      {super.key,
       this.title,
       required this.message,
       required this.cancelLabel,
-      required this.okLabel})
-      : super(key: key);
+      required this.okLabel});
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -66,7 +65,7 @@ class ConfirmDialog extends StatelessWidget {
       required BuildContext context}) {
     final buttonStyle = ButtonStyle(
         foregroundColor:
-            MaterialStateProperty.all(Theme.of(context).primaryColor));
+            WidgetStateProperty.all(Theme.of(context).primaryColor));
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -77,7 +76,7 @@ class ConfirmDialog extends StatelessWidget {
             onPressed: () => Navigator.of(context).pop(OkCancelAction.cancel),
             child: Text(
               cancelLabel,
-              textScaleFactor: 1.0,
+              textScaler: const TextScaler.linear(1.0),
             ),
           ),
         ),
@@ -88,7 +87,7 @@ class ConfirmDialog extends StatelessWidget {
             onPressed: () => Navigator.of(context).pop(OkCancelAction.ok),
             child: Text(
               okLabel,
-              textScaleFactor: 1.0,
+              textScaler: const TextScaler.linear(1.0),
             ),
           ),
         ),
